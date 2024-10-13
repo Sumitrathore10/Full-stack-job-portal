@@ -2,6 +2,7 @@ import express  from "express";
 import dotenv from "dotenv"
 import cors from "cors"
 import cookieParser from "cookie-parser";
+import db_connect from "./db/database.js"
 
 dotenv.config({
     path: ".env"
@@ -20,5 +21,6 @@ app.use(express.static("public"))
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT,()=>{
+    db_connect()
     console.log(`server is running on http://localhost:${PORT}`)
 })
