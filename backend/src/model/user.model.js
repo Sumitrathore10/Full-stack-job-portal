@@ -37,12 +37,6 @@ const userSchema = new mongoose.Schema(
       index: true,
     },
 
-    watchhistory: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Vedio",
-      },
-    ],
     refreshtoken: {
       type: String,
     },

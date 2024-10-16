@@ -18,8 +18,15 @@ app.use(cors({origin : process.env.CORS_ORIGIN,credentials : true}))
 app.use(cookieParser())
 app.use(express.static("public"))
 
+// routes import 
+
+import userRouter from "./routes/user.routes.js";
+
 const PORT = process.env.PORT || 3000
 
+//routes declaration
+
+app.use('/api/v1/user', userRouter)
 app.listen(PORT,()=>{
     db_connect()
     console.log(`server is running on http://localhost:${PORT}`)
